@@ -1,0 +1,6 @@
+framework module Pods_liveNews_liveNewsUITests {
+  umbrella header "Pods-liveNews-liveNewsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
