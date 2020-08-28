@@ -97,6 +97,73 @@
             </objects>
             <point key="canvasLocation" x="864.79999999999995" y="98.50074962518741"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="EvS-IU-wM6">
+            <objects>
+                <viewController storyboardIdentifier="detailedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yMc-ZT-ONS" customClass="detailedViewController" customModule="liveNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tka-Yj-nE6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKj-mp-haA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5yr-Mn-LKo">
+                                <rect key="frame" x="10" y="410" width="355" height="247"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxA-gm-KB2">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="descrvtion" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFa-rd-weu">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="219"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgi-cJ-Qnf">
+                                <rect key="frame" x="317" y="36" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Taj-lA-gSn"/>
+                                    <constraint firstAttribute="width" constant="38" id="xOS-tb-vjW"/>
+                                </constraints>
+                                <state key="normal" image="close_button"/>
+                                <connections>
+                                    <action selector="closeDetailedView:" destination="yMc-ZT-ONS" eventType="touchUpInside" id="mGO-X6-4c0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PKj-mp-haA" firstAttribute="top" secondItem="t4u-LC-tqK" secondAttribute="top" id="2eR-u4-tpG"/>
+                            <constraint firstItem="PKj-mp-haA" firstAttribute="height" secondItem="Tka-Yj-nE6" secondAttribute="height" multiplier="0.6" id="AvS-BE-a7G"/>
+                            <constraint firstItem="PKj-mp-haA" firstAttribute="leading" secondItem="t4u-LC-tqK" secondAttribute="leading" id="FZ5-qF-6ZO"/>
+                            <constraint firstItem="t4u-LC-tqK" firstAttribute="trailing" secondItem="5yr-Mn-LKo" secondAttribute="trailing" constant="10" id="NNy-Kd-F5G"/>
+                            <constraint firstItem="PKj-mp-haA" firstAttribute="trailing" secondItem="t4u-LC-tqK" secondAttribute="trailing" id="bJI-P6-TVr"/>
+                            <constraint firstItem="5yr-Mn-LKo" firstAttribute="leading" secondItem="t4u-LC-tqK" secondAttribute="leading" constant="10" id="f0s-Sb-wbG"/>
+                            <constraint firstItem="t4u-LC-tqK" firstAttribute="bottom" secondItem="5yr-Mn-LKo" secondAttribute="bottom" constant="10" id="rSa-Jz-m8A"/>
+                            <constraint firstItem="5yr-Mn-LKo" firstAttribute="top" secondItem="PKj-mp-haA" secondAttribute="bottom" constant="10" id="sKL-8m-se2"/>
+                            <constraint firstItem="Zgi-cJ-Qnf" firstAttribute="top" secondItem="t4u-LC-tqK" secondAttribute="top" constant="36" id="vHj-Ir-XZZ"/>
+                            <constraint firstItem="t4u-LC-tqK" firstAttribute="trailing" secondItem="Zgi-cJ-Qnf" secondAttribute="trailing" constant="20" id="xMv-Tx-vXY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t4u-LC-tqK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="0ft-aP-lvI"/>
+                    <connections>
+                        <outlet property="detailedDate" destination="hxA-gm-KB2" id="dTy-Rw-55M"/>
+                        <outlet property="detailedDescribtion" destination="GFa-rd-weu" id="QV6-Ai-Jgw"/>
+                        <outlet property="detailedImageView" destination="PKj-mp-haA" id="i6q-Uv-yGk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDc-EO-hPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551.2" y="94.902548725637189"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sKG-99-9Dp">
             <objects>
@@ -116,4 +183,7 @@
             <point key="canvasLocation" x="138.40000000000001" y="98.50074962518741"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close_button" width="38" height="38"/>
+    </resources>
 </document>

@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
      
         
         guard let _ = (scene as? UIWindowScene) else { return }
-           self.window?.rootViewController = UINavigationController(rootViewController: newsRouter.createModule())
+        self.window?.rootViewController = UINavigationController(rootViewController: newsRouter.createModule())
         
     }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import SwiftMessages
 class newsViewController: UIViewController {
     
     
@@ -15,21 +16,35 @@ class newsViewController: UIViewController {
     
     // MARK: - Properties
       var presenter: ViewToPresenternewsProtocol?
+ 
+    
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+          presenter?.viewDidLoad()
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 //        self.navigationController?.isNavigationBarHidden = true
      navigationController?.navigationBar.prefersLargeTitles = true
-    navigationItem.largeTitleDisplayMode = .always
-        presenter?.viewDidLoad()
-
-    }
+     navigationItem.largeTitleDisplayMode = .always
+        
+        // check internet connection
+   do {
+    try  GlobalData.sharedInstance.reachability?.startNotifier()
+       presenter?.checkInternet(self)
     
-  
+        } catch let error {
+            print(error)
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+         super.viewWillDisappear(animated)
+          GlobalData.sharedInstance.reachability?.stopNotifier()
+         NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object:  GlobalData.sharedInstance.reachability)
+     }
     
 }
 
@@ -62,6 +77,9 @@ extension newsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.navigateToDetailed(self , indexPath.row)
     }
     
 }

@@ -15,6 +15,7 @@ class newsInteractor: PresenterToInteractornewsProtocol {
     func getNewsFromServer() {
         networking.shared.getNews(completion: {[weak self] (new) in
             self?.presenter?.sucessedToGetNew(new)
+         
              
         }) {[weak self] (response) in
             self?.presenter?.failedToGetNew(response)

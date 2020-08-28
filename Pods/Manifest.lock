@@ -8,12 +8,15 @@ PODS:
   - Kingfisher/Core (5.13.2)
   - Networking (5.0.2)
   - PKHUD (5.3.0)
-  - Reachability (3.2)
   - RSKGrowingTextView (6.0.2):
     - RSKPlaceholderTextView (= 6.0.3)
   - RSKPlaceholderTextView (6.0.3)
   - Spring (1.0.5)
   - SwiftLint (0.39.2)
+  - SwiftMessages (7.0.1):
+    - SwiftMessages/App (= 7.0.1)
+  - SwiftMessages/App (7.0.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -23,10 +26,11 @@ DEPENDENCIES:
   - Kingfisher
   - Networking
   - PKHUD
-  - Reachability
   - RSKGrowingTextView
   - Spring
   - SwiftLint
+  - SwiftMessages
+  - Toast-Swift
 
 SPEC REPOS:
   trunk:
@@ -37,11 +41,12 @@ SPEC REPOS:
     - Kingfisher
     - Networking
     - PKHUD
-    - Reachability
     - RSKGrowingTextView
     - RSKPlaceholderTextView
     - Spring
     - SwiftLint
+    - SwiftMessages
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
@@ -51,12 +56,13 @@ SPEC CHECKSUMS:
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
   Networking: dc4776bdd189607f4be4fad5f1843e744690d65b
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RSKGrowingTextView: 44f9137996bfaf6122c80a70dafb0b7195fb7746
   RSKPlaceholderTextView: fc8c8932546298ec9d5e5572284aa42adb87b066
   Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+  SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: ecaa7e8df1c23230ffa765a1e247b2100bd9411c
+PODFILE CHECKSUM: a452f0f455697c3be23d9d66ec2ed3e270c6f516
 
 COCOAPODS: 1.8.4

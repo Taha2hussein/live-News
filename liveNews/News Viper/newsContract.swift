@@ -6,7 +6,7 @@
 //  Copyright © 2020 Taha Hussein. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 // MARK: View Output (Presenter -> View)
@@ -25,9 +25,12 @@ protocol ViewToPresenternewsProtocol {
     var interactor: PresenterToInteractornewsProtocol? { get set }
     var router: PresenterToRouternewsProtocol? { get set }
     
+    var newData: NewModel? { get set }
     func viewDidLoad()
     func cellOfRowsInTable(_ cell : newTableViewCell , _ index : IndexPath)
     func numberOfRowInSection(_ section : Int) -> Int
+    func navigateToDetailed(_ viewController: UIViewController,_ indexPath : Int)
+    func checkInternet(_ viewController:UIViewController)
 }
 
 
@@ -49,5 +52,6 @@ protocol InteractorToPresenternewsProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouternewsProtocol {
-    
+    func navigateToDetailed(_ viewController: UIViewController , _ newModel : Article)
+    func checkInternet(_ view:UIViewController)
 }

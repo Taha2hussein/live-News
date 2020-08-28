@@ -6,9 +6,21 @@
 //  Copyright © 2020 Taha Hussein. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class newsPresenter: ViewToPresenternewsProtocol {
+    func checkInternet(_ viewController: UIViewController) {
+        router?.checkInternet(viewController)
+    }
+    
+    
+   
+
+    func navigateToDetailed(_ viewController: UIViewController ,_ indexPath : Int) {
+        guard let newModel = newData?.articles[indexPath] else { return  }
+        router?.navigateToDetailed(viewController,newModel)
+    }
+    
     func cellOfRowsInTable(_ cell: newTableViewCell, _ index: IndexPath) {
         guard let new = newData else{return}
         cell.reuseNewCell(cell, new, index)
@@ -40,7 +52,7 @@ extension newsPresenter: InteractorToPresenternewsProtocol {
     
     func sucessedToGetNew(_ new: NewModel) {
         newData = new
-      
+        GlobalData.sharedInstance.newData = new
         view?.hideLoader()
         view?.reloadData()
     }
