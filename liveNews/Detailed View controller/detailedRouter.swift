@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 class detailedRouter: PresenterToRouterdetailedProtocol {
+    func navigateTohome(_ viewContoleller: UIViewController) {
+        let home = homeRouter.createModule()
+        viewContoleller.navigationController?.pushViewController(home, animated: true)
+    }
+    
     func popView(_ viewContoleller: UIViewController) {
         viewContoleller.navigationController?.popViewController(animated: true)
     }

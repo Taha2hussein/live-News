@@ -9,6 +9,10 @@
 import UIKit
 
 class detailedPresenter: ViewToPresenterdetailedProtocol {
+    func pushTohome(_ viewContoleller: UIViewController) {
+        router?.navigateTohome(viewContoleller)
+    }
+    
     func popView(_ viewContoleller: UIViewController) {
         router?.popView(viewContoleller)
     }

@@ -9,13 +9,12 @@
 import UIKit
 
 class newsPresenter: ViewToPresenternewsProtocol {
+   
+    
     func checkInternet(_ viewController: UIViewController) {
         router?.checkInternet(viewController)
     }
     
-    
-   
-
     func navigateToDetailed(_ viewController: UIViewController ,_ indexPath : Int) {
         guard let newModel = newData?.articles[indexPath] else { return  }
         router?.navigateToDetailed(viewController,newModel)

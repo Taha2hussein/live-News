@@ -20,6 +20,7 @@ class detailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        setUp()
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -30,7 +31,10 @@ class detailedViewController: UIViewController {
         presenter?.popView(self)
     }
     
-
+    @IBAction func openHome(_ sender: Any) {
+        presenter?.pushTohome(self)
+    }
+    
 }
 
 extension detailedViewController: PresenterToViewdetailedProtocol{

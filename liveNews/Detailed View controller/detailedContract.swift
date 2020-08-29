@@ -23,6 +23,7 @@ protocol ViewToPresenterdetailedProtocol {
     var router: PresenterToRouterdetailedProtocol? { get set }
  
     func popView(_ viewContoleller : UIViewController)
+    func pushTohome(_ viewContoleller : UIViewController)
 }
 
 
@@ -42,4 +43,5 @@ protocol InteractorToPresenterdetailedProtocol {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterdetailedProtocol {
     func popView(_ viewContoleller : UIViewController)
+    func navigateTohome(_ viewContoleller : UIViewController)
 }

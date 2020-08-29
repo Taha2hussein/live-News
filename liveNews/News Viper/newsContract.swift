@@ -31,6 +31,7 @@ protocol ViewToPresenternewsProtocol {
     func numberOfRowInSection(_ section : Int) -> Int
     func navigateToDetailed(_ viewController: UIViewController,_ indexPath : Int)
     func checkInternet(_ viewController:UIViewController)
+   
 }
 
 
