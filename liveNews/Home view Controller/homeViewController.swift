@@ -21,8 +21,9 @@ class homeViewController: UIViewController {
     // MARK: - Lifecycle Methods
        override func viewDidLoad() {
            super.viewDidLoad()
-
+         
         
+
        }
        override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(true)
@@ -44,12 +45,17 @@ extension  homeViewController: UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userTableViewCell", for: indexPath)as! userTableViewCell
-        
+        if indexPath.row == 0{
+        if let layout = cell.collectionData.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
+            }
+        }
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 150
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 150
+    }
 }
 

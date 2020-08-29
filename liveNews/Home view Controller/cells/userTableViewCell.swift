@@ -12,12 +12,14 @@ class userTableViewCell: UITableViewCell {
     @IBOutlet weak var sectionName: UILabel!
     @IBOutlet weak var collectionData : UICollectionView!
     
-    let data = ["one","two","three","one","two","three","one","two","three"]
+    let data = ["one","two","three","one","two","three","one","two","three","one","two","three","one","two","three","one","two","three","one","two","three","one","two","three","one","two","three"]
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         collectionData.dataSource = self
         collectionData.delegate = self
+        let indexPath = IndexPath(row: ((self.data.count)) - 1, section: 0)
+        self.collectionData.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,5 +43,9 @@ extension userTableViewCell : UICollectionViewDelegate, UICollectionViewDataSour
 
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: 150, height: 150)
+//    }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print("sdsdsdsd")
 //    }
 }
